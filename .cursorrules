@@ -1,0 +1,86 @@
+You are working on a full-stack AI Analytics / BI platform.
+
+The system consists of:
+- React frontend (Vite + TypeScript)
+- .NET 8 Web API backend
+- AI integration layer using OpenAI (initially), later Azure OpenAI
+- SQL Server database for analytics data
+
+---
+
+# ARCHITECTURE PRINCIPLES
+
+1. Separation of concerns is strict:
+   - React only handles UI and API calls
+   - .NET API handles orchestration and business logic
+   - AI services are isolated behind interfaces
+   - Database logic is never exposed to frontend
+
+2. AI is treated as a service, not business logic:
+   - AI is used for SQL generation, summarization, and insights
+   - AI outputs must be validated before execution
+   - Deterministic code controls workflows and safety
+
+3. Use clean architecture in backend:
+   - API layer (controllers)
+   - Application layer (services/workflows)
+   - Domain layer (core models)
+   - Infrastructure layer (DB, AI, external services)
+
+---
+
+# AI DESIGN RULES
+
+- Always abstract OpenAI behind an interface (IAIProvider)
+- Never call OpenAI directly from controllers
+- Prompts must be centralized and reusable
+- AI responses should be structured where possible (not free text only)
+- SQL generation must be validated before execution
+- Never allow AI-generated queries to execute destructive commands (DELETE, DROP, UPDATE)
+
+---
+
+# FRONTEND RULES
+
+- React uses functional components and hooks
+- API calls are centralized in a /api folder
+- UI is minimal and functional (not over-engineered)
+- Results from backend are rendered dynamically (schema-agnostic tables)
+- No business logic in UI
+
+---
+
+# BACKEND RULES
+
+- Controllers are thin (no business logic)
+- Services handle all orchestration
+- AI calls are made through IAIProvider abstraction
+- SQL execution is isolated and safe
+- Logging is included for AI prompts and outputs
+
+---
+
+# DEVELOPMENT PRIORITIES
+
+1. Build vertical slices first:
+   - Question → AI → SQL → DB → UI
+
+2. Avoid premature optimization:
+   - No microservices
+   - No event-driven architecture (until needed)
+   - No complex caching early
+
+3. Focus on system behavior over structure perfection
+
+---
+
+# PROJECT GOAL
+
+This project is a production-style AI analytics platform that demonstrates:
+- LLM integration in real workflows
+- SQL generation from natural language
+- safe execution of AI-generated outputs
+- clean architecture and system design
+- observability and evaluation patterns
+
+The goal is not a demo — it is a realistic enterprise-style AI system.

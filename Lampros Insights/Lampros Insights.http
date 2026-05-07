@@ -1,0 +1,6 @@
+@Lampros_Insights_HostAddress = http://localhost:5284
+
+GET {{Lampros_Insights_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
