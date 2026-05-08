@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lampros Insights", "Lampros Insights\Lampros Insights.csproj", "{FD947CD1-E622-4481-9FBD-B37E22A8EC6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LamprosInsights.Api", "Lampros Insights\LamprosInsights.Api.csproj", "{FD947CD1-E622-4481-9FBD-B37E22A8EC6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LamprosInsights.Application", "LamprosInsights.Application\LamprosInsights.Application.csproj", "{837B824F-9A64-4B4A-AC12-219803F1A865}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{FD947CD1-E622-4481-9FBD-B37E22A8EC6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD947CD1-E622-4481-9FBD-B37E22A8EC6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD947CD1-E622-4481-9FBD-B37E22A8EC6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{837B824F-9A64-4B4A-AC12-219803F1A865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{837B824F-9A64-4B4A-AC12-219803F1A865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{837B824F-9A64-4B4A-AC12-219803F1A865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{837B824F-9A64-4B4A-AC12-219803F1A865}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
