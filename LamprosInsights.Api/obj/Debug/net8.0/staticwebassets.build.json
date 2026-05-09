@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ANYhmHHw+nYl6ti6C1gk7ASEp+16uTzCV6EE6W76X04=",
+  "Source": "LamprosInsights.Api",
+  "BasePath": "_content/LamprosInsights.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

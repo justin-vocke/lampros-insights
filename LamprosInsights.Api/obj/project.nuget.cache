@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "scWVzHH+SA50IMesZaVag8jNZ0JU/U8C2iug2XEF1e54XTzNpYXFyk7lgKYcQy5wechYSujU1j+T31FXXat9ag==",
+  "dgSpecHash": "8EfW9jBrtaodgNTi0dSHXvL562NU1thXmuTvc9koNzcG9KjIjizOAZj9jq3GCthIg6E9PV2k2r4rClYAp4U2yw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\Lampros Insights\\LamprosInsights.Api.csproj",
+  "projectFilePath": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Api\\LamprosInsights.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\topti\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\topti\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

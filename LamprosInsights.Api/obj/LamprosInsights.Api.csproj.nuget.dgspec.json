@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\topti\\source\\repos\\LamprosInsights\\Lampros Insights\\LamprosInsights.Api.csproj": {}
+    "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Api\\LamprosInsights.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\topti\\source\\repos\\LamprosInsights\\Lampros Insights\\LamprosInsights.Api.csproj": {
+    "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Api\\LamprosInsights.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\Lampros Insights\\LamprosInsights.Api.csproj",
+        "projectUniqueName": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Api\\LamprosInsights.Api.csproj",
         "projectName": "LamprosInsights.Api",
-        "projectPath": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\Lampros Insights\\LamprosInsights.Api.csproj",
+        "projectPath": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Api\\LamprosInsights.Api.csproj",
         "packagesPath": "C:\\Users\\topti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\Lampros Insights\\obj\\",
+        "outputPath": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\topti\\AppData\\Roaming\\NuGet\\NuGet.Config",

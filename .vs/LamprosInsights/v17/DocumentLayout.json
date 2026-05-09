@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{837B824F-9A64-4B4A-AC12-219803F1A865}|LamprosInsights.Application\\LamprosInsights.Application.csproj|c:\\users\\topti\\source\\repos\\lamprosinsights\\lamprosinsights.application\\lamprosinsights.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{837B824F-9A64-4B4A-AC12-219803F1A865}|LamprosInsights.Application\\LamprosInsights.Application.csproj|solutionrelative:lamprosinsights.application\\lamprosinsights.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LamprosInsights.Application.csproj",
+              "DocumentMoniker": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Application\\LamprosInsights.Application.csproj",
+              "RelativeDocumentMoniker": "LamprosInsights.Application\\LamprosInsights.Application.csproj",
+              "ToolTip": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Application\\LamprosInsights.Application.csproj",
+              "RelativeToolTip": "LamprosInsights.Application\\LamprosInsights.Application.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-08T22:55:24.13Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
