@@ -1,0 +1,12 @@
+C:\Users\topti\source\repos\LamprosInsights\LamprosInsights.Domain\bin\Debug\net8.0\LamprosInsights.Domain.deps.json
+C:\Users\topti\source\repos\LamprosInsights\LamprosInsights.Domain\bin\Debug\net8.0\LamprosInsights.Domain.dll
+C:\Users\topti\source\repos\LamprosInsights\LamprosInsights.Domain\bin\Debug\net8.0\LamprosInsights.Domain.pdb
+C:\Users\topti\source\repos\LamprosInsights\LamprosInsights.Domain\obj\Debug\net8.0\LamprosInsights.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\topti\source\repos\LamprosInsights\LamprosInsights.Domain\obj\Debug\net8.0\LamprosInsights.Domain.AssemblyInfoInputs.cache
+C:\Users\topti\source\repos\LamprosInsights\LamprosInsights.Domain\obj\Debug\net8.0\LamprosInsights.Domain.AssemblyInfo.cs
+C:\Users\topti\source\repos\LamprosInsights\LamprosInsights.Domain\obj\Debug\net8.0\LamprosInsights.Domain.csproj.CoreCompileInputs.cache
+C:\Users\topti\source\repos\LamprosInsights\LamprosInsights.Domain\obj\Debug\net8.0\LamprosInsights.Domain.sourcelink.json
+C:\Users\topti\source\repos\LamprosInsights\LamprosInsights.Domain\obj\Debug\net8.0\LamprosInsights.Domain.dll
+C:\Users\topti\source\repos\LamprosInsights\LamprosInsights.Domain\obj\Debug\net8.0\refint\LamprosInsights.Domain.dll
+C:\Users\topti\source\repos\LamprosInsights\LamprosInsights.Domain\obj\Debug\net8.0\LamprosInsights.Domain.pdb
+C:\Users\topti\source\repos\LamprosInsights\LamprosInsights.Domain\obj\Debug\net8.0\ref\LamprosInsights.Domain.dll
