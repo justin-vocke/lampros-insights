@@ -16,3 +16,5 @@ C:\Users\topti\source\repos\LamprosInsights\LamprosInsights.Infrastructure\obj\D
 C:\Users\topti\source\repos\LamprosInsights\LamprosInsights.Infrastructure\obj\Debug\net8.0\refint\LamprosInsights.Infrastructure.dll
 C:\Users\topti\source\repos\LamprosInsights\LamprosInsights.Infrastructure\obj\Debug\net8.0\LamprosInsights.Infrastructure.pdb
 C:\Users\topti\source\repos\LamprosInsights\LamprosInsights.Infrastructure\obj\Debug\net8.0\ref\LamprosInsights.Infrastructure.dll
+C:\Users\topti\source\repos\LamprosInsights\LamprosInsights.Infrastructure\bin\Debug\net8.0\LamprosInsights.Infrastructure.runtimeconfig.json
+C:\Users\topti\source\repos\LamprosInsights\LamprosInsights.Infrastructure\obj\Debug\net8.0\LamprosInsights.Infrastructure.genruntimeconfig.cache
