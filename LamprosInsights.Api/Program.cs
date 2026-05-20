@@ -1,4 +1,7 @@
+using LamprosInsights.Application.Features.Analytics.Interfaces;
+using LamprosInsights.Application.Features.Analytics.Services;
 using LamprosInsights.Infrastructure.Persistence;
+using LamprosInsights.Infrastructure.Persistence.Schema;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,7 +20,13 @@ builder.Services.AddDbContext<AnalyticsDbContext>(
             builder.Configuration.GetConnectionString(
                 "DefaultConnection"));
     });
+builder.Services.AddScoped<
+    ISchemaProvider,
+    SqlServerSchemaProvider>();
 
+builder.Services.AddScoped<
+    IAnalyticsService,
+    AnalyticsService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

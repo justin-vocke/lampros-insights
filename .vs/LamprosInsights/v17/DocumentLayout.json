@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F2031B1D-2B42-441A-99CD-479F1EBC91E5}|LamprosInsights.Api\\LamprosInsights.Api.csproj|c:\\users\\topti\\source\\repos\\lamprosinsights\\lamprosinsights.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F2031B1D-2B42-441A-99CD-479F1EBC91E5}|LamprosInsights.Api\\LamprosInsights.Api.csproj|solutionrelative:lamprosinsights.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{F2031B1D-2B42-441A-99CD-479F1EBC91E5}|LamprosInsights.Api\\LamprosInsights.Api.csproj|c:\\users\\topti\\source\\repos\\lamprosinsights\\lamprosinsights.api\\controllers\\analyticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2031B1D-2B42-441A-99CD-479F1EBC91E5}|LamprosInsights.Api\\LamprosInsights.Api.csproj|solutionrelative:lamprosinsights.api\\controllers\\analyticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F2031B1D-2B42-441A-99CD-479F1EBC91E5}|LamprosInsights.Api\\LamprosInsights.Api.csproj|c:\\users\\topti\\source\\repos\\lamprosinsights\\lamprosinsights.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F2031B1D-2B42-441A-99CD-479F1EBC91E5}|LamprosInsights.Api\\LamprosInsights.Api.csproj|solutionrelative:lamprosinsights.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{837B824F-9A64-4B4A-AC12-219803F1A865}|LamprosInsights.Application\\LamprosInsights.Application.csproj|c:\\users\\topti\\source\\repos\\lamprosinsights\\lamprosinsights.application\\features\\analytics\\services\\analyticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{837B824F-9A64-4B4A-AC12-219803F1A865}|LamprosInsights.Application\\LamprosInsights.Application.csproj|solutionrelative:lamprosinsights.application\\features\\analytics\\services\\analyticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{837B824F-9A64-4B4A-AC12-219803F1A865}|LamprosInsights.Application\\LamprosInsights.Application.csproj|c:\\users\\topti\\source\\repos\\lamprosinsights\\lamprosinsights.application\\features\\analytics\\interfaces\\ianalyticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{837B824F-9A64-4B4A-AC12-219803F1A865}|LamprosInsights.Application\\LamprosInsights.Application.csproj|solutionrelative:lamprosinsights.application\\features\\analytics\\interfaces\\ianalyticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18653A59-5DEB-40D9-815B-8CEA8BC27938}|LamprosInsights.Infrastructure\\LamprosInsights.Infrastructure.csproj|c:\\users\\topti\\source\\repos\\lamprosinsights\\lamprosinsights.infrastructure\\lamprosinsights.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{18653A59-5DEB-40D9-815B-8CEA8BC27938}|LamprosInsights.Infrastructure\\LamprosInsights.Infrastructure.csproj|solutionrelative:lamprosinsights.infrastructure\\lamprosinsights.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18653A59-5DEB-40D9-815B-8CEA8BC27938}|LamprosInsights.Infrastructure\\LamprosInsights.Infrastructure.csproj|c:\\users\\topti\\source\\repos\\lamprosinsights\\lamprosinsights.infrastructure\\persistence\\schema\\sqlserverschemaprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18653A59-5DEB-40D9-815B-8CEA8BC27938}|LamprosInsights.Infrastructure\\LamprosInsights.Infrastructure.csproj|solutionrelative:lamprosinsights.infrastructure\\persistence\\schema\\sqlserverschemaprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2031B1D-2B42-441A-99CD-479F1EBC91E5}|LamprosInsights.Api\\LamprosInsights.Api.csproj|c:\\users\\topti\\source\\repos\\lamprosinsights\\lamprosinsights.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F2031B1D-2B42-441A-99CD-479F1EBC91E5}|LamprosInsights.Api\\LamprosInsights.Api.csproj|solutionrelative:lamprosinsights.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18653A59-5DEB-40D9-815B-8CEA8BC27938}|LamprosInsights.Infrastructure\\LamprosInsights.Infrastructure.csproj|c:\\users\\topti\\source\\repos\\lamprosinsights\\lamprosinsights.infrastructure\\persistence\\analyticsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -53,6 +73,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{837B824F-9A64-4B4A-AC12-219803F1A865}|LamprosInsights.Application\\LamprosInsights.Application.csproj|c:\\users\\topti\\source\\repos\\lamprosinsights\\lamprosinsights.application\\lamprosinsights.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{837B824F-9A64-4B4A-AC12-219803F1A865}|LamprosInsights.Application\\LamprosInsights.Application.csproj|solutionrelative:lamprosinsights.application\\lamprosinsights.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Application\\Features\\Analytics\\Interfaces\\ISchemaProvider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:LamprosInsights.Application\\Features\\Analytics\\Interfaces\\ISchemaProvider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,8 +86,85 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AnalyticsController.cs",
+              "DocumentMoniker": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Api\\Controllers\\AnalyticsController.cs",
+              "RelativeDocumentMoniker": "LamprosInsights.Api\\Controllers\\AnalyticsController.cs",
+              "ToolTip": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Api\\Controllers\\AnalyticsController.cs",
+              "RelativeToolTip": "LamprosInsights.Api\\Controllers\\AnalyticsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T17:55:08.158Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AnalyticsService.cs",
+              "DocumentMoniker": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Application\\Features\\Analytics\\Services\\AnalyticsService.cs",
+              "RelativeDocumentMoniker": "LamprosInsights.Application\\Features\\Analytics\\Services\\AnalyticsService.cs",
+              "ToolTip": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Application\\Features\\Analytics\\Services\\AnalyticsService.cs",
+              "RelativeToolTip": "LamprosInsights.Application\\Features\\Analytics\\Services\\AnalyticsService.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAewBQAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T17:52:31.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IAnalyticsService.cs",
+              "DocumentMoniker": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Application\\Features\\Analytics\\Interfaces\\IAnalyticsService.cs",
+              "RelativeDocumentMoniker": "LamprosInsights.Application\\Features\\Analytics\\Interfaces\\IAnalyticsService.cs",
+              "ToolTip": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Application\\Features\\Analytics\\Interfaces\\IAnalyticsService.cs",
+              "RelativeToolTip": "LamprosInsights.Application\\Features\\Analytics\\Interfaces\\IAnalyticsService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T17:51:22.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LamprosInsights.Infrastructure",
+              "DocumentMoniker": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Infrastructure\\LamprosInsights.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "LamprosInsights.Infrastructure\\LamprosInsights.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Infrastructure\\LamprosInsights.Infrastructure.csproj",
+              "RelativeToolTip": "LamprosInsights.Infrastructure\\LamprosInsights.Infrastructure.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-15T17:12:12.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SqlServerSchemaProvider.cs",
+              "DocumentMoniker": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Infrastructure\\Persistence\\Schema\\SqlServerSchemaProvider.cs",
+              "RelativeDocumentMoniker": "LamprosInsights.Infrastructure\\Persistence\\Schema\\SqlServerSchemaProvider.cs",
+              "ToolTip": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Infrastructure\\Persistence\\Schema\\SqlServerSchemaProvider.cs",
+              "RelativeToolTip": "LamprosInsights.Infrastructure\\Persistence\\Schema\\SqlServerSchemaProvider.cs",
+              "ViewState": "AQIAAE8AAAAAAAAAAAAAAAIAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T01:28:53.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ISchemaProvider.cs",
+              "DocumentMoniker": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Application\\Features\\Analytics\\Interfaces\\ISchemaProvider.cs",
+              "RelativeDocumentMoniker": "LamprosInsights.Application\\Features\\Analytics\\Interfaces\\ISchemaProvider.cs",
+              "ToolTip": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Application\\Features\\Analytics\\Interfaces\\ISchemaProvider.cs",
+              "RelativeToolTip": "LamprosInsights.Application\\Features\\Analytics\\Interfaces\\ISchemaProvider.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T01:28:08.423Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -72,14 +173,14 @@
               "RelativeDocumentMoniker": "LamprosInsights.Api\\Program.cs",
               "ToolTip": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Api\\Program.cs",
               "RelativeToolTip": "LamprosInsights.Api\\Program.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAwAAAAyAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABwAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-11T07:43:07.685Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Api\\appsettings.json",
               "RelativeDocumentMoniker": "LamprosInsights.Api\\appsettings.json",
@@ -87,12 +188,11 @@
               "RelativeToolTip": "LamprosInsights.Api\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-11T07:37:50.525Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-11T07:37:50.525Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Payment.cs",
               "DocumentMoniker": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Domain\\Analytics\\Payment.cs",
               "RelativeDocumentMoniker": "LamprosInsights.Domain\\Analytics\\Payment.cs",
@@ -104,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "Invoice.cs",
               "DocumentMoniker": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Domain\\Analytics\\Invoice.cs",
               "RelativeDocumentMoniker": "LamprosInsights.Domain\\Analytics\\Invoice.cs",
@@ -116,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "OrderItem.cs",
               "DocumentMoniker": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Domain\\Analytics\\OrderItem.cs",
               "RelativeDocumentMoniker": "LamprosInsights.Domain\\Analytics\\OrderItem.cs",
@@ -128,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Domain\\Analytics\\Order.cs",
               "RelativeDocumentMoniker": "LamprosInsights.Domain\\Analytics\\Order.cs",
@@ -140,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Domain\\Analytics\\Product.cs",
               "RelativeDocumentMoniker": "LamprosInsights.Domain\\Analytics\\Product.cs",
@@ -152,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "Customer.cs",
               "DocumentMoniker": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Domain\\Analytics\\Customer.cs",
               "RelativeDocumentMoniker": "LamprosInsights.Domain\\Analytics\\Customer.cs",
@@ -164,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "SalesRep.cs",
               "DocumentMoniker": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Domain\\Analytics\\SalesRep.cs",
               "RelativeDocumentMoniker": "LamprosInsights.Domain\\Analytics\\SalesRep.cs",
@@ -176,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "AnalyticsDbContext.cs",
               "DocumentMoniker": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Infrastructure\\Persistence\\AnalyticsDbContext.cs",
               "RelativeDocumentMoniker": "LamprosInsights.Infrastructure\\Persistence\\AnalyticsDbContext.cs",
@@ -188,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "Region.cs",
               "DocumentMoniker": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Domain\\Analytics\\Region.cs",
               "RelativeDocumentMoniker": "LamprosInsights.Domain\\Analytics\\Region.cs",
@@ -200,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "IAIProvider.cs",
               "DocumentMoniker": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Application\\Features\\Analytics\\Interfaces\\IAIProvider.cs",
               "RelativeDocumentMoniker": "LamprosInsights.Application\\Features\\Analytics\\Interfaces\\IAIProvider.cs",
@@ -212,7 +312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "LamprosInsights.Application.csproj",
               "DocumentMoniker": "C:\\Users\\topti\\source\\repos\\LamprosInsights\\LamprosInsights.Application\\LamprosInsights.Application.csproj",
               "RelativeDocumentMoniker": "LamprosInsights.Application\\LamprosInsights.Application.csproj",
@@ -220,7 +320,8 @@
               "RelativeToolTip": "LamprosInsights.Application\\LamprosInsights.Application.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-05-08T22:55:24.13Z"
+              "WhenOpened": "2026-05-08T22:55:24.13Z",
+              "EditorCaption": ""
             }
           ]
         }
