@@ -1,4 +1,4 @@
-﻿using LamprosInsights.Application.Features.Analytics.Interfaces;
+﻿using LamprosInsights.Application.Features.Analytics.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;

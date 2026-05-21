@@ -1,6 +1,6 @@
 ﻿using System.Data;
 using System.Text;
-using LamprosInsights.Application.Features.Analytics.Interfaces;
+using LamprosInsights.Application.Features.Analytics.Abstractions;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 

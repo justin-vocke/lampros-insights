@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LamprosInsights.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b1d885e4b293733ed9bbd2c64fdbf62ba950185e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+524fa2b5f13578e33eaf082a0784169af1435c03")]
 [assembly: System.Reflection.AssemblyProductAttribute("LamprosInsights.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LamprosInsights.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
