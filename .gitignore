@@ -1,4 +1,7 @@
 .vs/
+**/.vs/
+**/bin/
+**/obj/
 bin/
 obj/
 node_modules/

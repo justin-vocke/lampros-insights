@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LamprosInsights.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+524fa2b5f13578e33eaf082a0784169af1435c03")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4cea062c855f935a71e4bac3ec0cfcc050028a29")]
 [assembly: System.Reflection.AssemblyProductAttribute("LamprosInsights.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LamprosInsights.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

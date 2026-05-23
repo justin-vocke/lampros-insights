@@ -8,7 +8,9 @@ namespace LamprosInsights.Application.Features.Analytics.Abstractions
 {
     public interface IAnalyticsService
     {
-        Task<string> GetSchemaAsync(
+
+        Task<string> GenerateSqlAsync(
+            string question,
             CancellationToken cancellationToken = default);
     }
 }

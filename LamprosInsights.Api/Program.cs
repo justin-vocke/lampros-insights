@@ -1,5 +1,7 @@
 using LamprosInsights.Application.Features.Analytics.Abstractions;
+using LamprosInsights.Application.Features.Analytics.Prompts;
 using LamprosInsights.Application.Features.Analytics.Services;
+using LamprosInsights.Infrastructure.AI.OpenAI;
 using LamprosInsights.Infrastructure.Persistence;
 using LamprosInsights.Infrastructure.Persistence.Schema;
 using Microsoft.EntityFrameworkCore;
@@ -24,9 +26,15 @@ builder.Services.AddScoped<
     ISchemaProvider,
     SqlServerSchemaProvider>();
 
+builder.Services.AddScoped<AnalyticsPromptBuilder>();
+
 builder.Services.AddScoped<
     IAnalyticsService,
     AnalyticsService>();
+
+builder.Services.AddScoped<
+    IAIProvider,
+    OpenAIProvider>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
