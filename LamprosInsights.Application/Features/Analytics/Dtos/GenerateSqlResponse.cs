@@ -9,5 +9,9 @@ namespace LamprosInsights.Application.Features.Analytics.Dtos
     public class GenerateSqlResponse
     {
         public string Sql { get; set; } = string.Empty;
+
+        public bool IsValid { get; set; }
+
+        public List<string> ValidationErrors { get; set; } = [];
     }
 }

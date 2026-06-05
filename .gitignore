@@ -8,4 +8,6 @@ obj/
 node_modules/
 dist/
 .env
+**/appsettings.Development.json
+!**/appsettings.Development.json.example
 /LamprosInsights.Api/appsettings.Development.json
