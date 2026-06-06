@@ -22,17 +22,14 @@ public class AnalyticsController(
     //}
 
     [HttpPost("generate-sql")]
-    public async Task<IActionResult> GenerateSql(
+    public async Task<ActionResult<GenerateSqlResponse>> GenerateSql(
     GenerateSqlRequest request,
     CancellationToken cancellationToken)
     {
-        var sql = await _analyticsService.GenerateSqlAsync(
+        var result = await _analyticsService.GenerateSqlAsync(
             request.Question,
             cancellationToken);
 
-        return Ok(new GenerateSqlResponse
-        {
-            Sql = sql
-        });
+        return Ok(result);
     }
 }

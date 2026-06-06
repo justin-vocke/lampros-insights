@@ -1,6 +1,7 @@
 using LamprosInsights.Application.Features.Analytics.Abstractions;
 using LamprosInsights.Application.Features.Analytics.Prompts;
 using LamprosInsights.Application.Features.Analytics.Services;
+using LamprosInsights.Application.Features.Analytics.Validation;
 using LamprosInsights.Infrastructure.AI.OpenAI;
 using LamprosInsights.Infrastructure.Persistence;
 using LamprosInsights.Infrastructure.Persistence.Schema;
@@ -25,6 +26,10 @@ builder.Services.AddDbContext<AnalyticsDbContext>(
 builder.Services.AddScoped<
     ISchemaProvider,
     SqlServerSchemaProvider>();
+
+builder.Services.AddScoped<
+    ISqlValidator,
+    SqlValidator>();
 
 builder.Services.AddScoped<AnalyticsPromptBuilder>();
 

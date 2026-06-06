@@ -1,4 +1,5 @@
 ﻿using LamprosInsights.Application.Features.Analytics.Abstractions;
+using LamprosInsights.Application.Features.Analytics.Dtos;
 using LamprosInsights.Application.Features.Analytics.Prompts;
 using LamprosInsights.Application.Features.Analytics.Validation;
 using System;
@@ -14,7 +15,7 @@ namespace LamprosInsights.Application.Features.Analytics.Services
         private readonly ISchemaProvider _schemaProvider;
 
         private readonly IAIProvider _aiProvider;
-        private readonly ISqlValidator sqlValidator;
+        private readonly ISqlValidator _sqlValidator;
 
         private readonly AnalyticsPromptBuilder _promptBuilder;
 
@@ -27,10 +28,10 @@ namespace LamprosInsights.Application.Features.Analytics.Services
             _schemaProvider = schemaProvider;
             _aiProvider = aiProvider;
             _promptBuilder = promptBuilder;
-            this.sqlValidator = sqlValidator;
+            _sqlValidator = sqlValidator;
         }
 
-        public async Task<string> GenerateSqlAsync(
+        public async Task<GenerateSqlResponse> GenerateSqlAsync(
             string question,
             CancellationToken cancellationToken = default)
         {
@@ -48,7 +49,13 @@ namespace LamprosInsights.Application.Features.Analytics.Services
                     prompt,
                     cancellationToken);
 
-            return sql;
+            var validation = _sqlValidator.Validate(sql);
+            return new GenerateSqlResponse
+            {
+                Sql = sql,
+                IsValid = validation.IsValid,
+                ValidationErrors = validation.Errors
+            };
         }
     }
 }

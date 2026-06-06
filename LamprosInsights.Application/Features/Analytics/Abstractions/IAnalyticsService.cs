@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LamprosInsights.Application.Features.Analytics.Dtos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace LamprosInsights.Application.Features.Analytics.Abstractions
     public interface IAnalyticsService
     {
 
-        Task<string> GenerateSqlAsync(
+        Task<GenerateSqlResponse> GenerateSqlAsync(
             string question,
             CancellationToken cancellationToken = default);
     }
