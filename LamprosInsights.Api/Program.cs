@@ -5,6 +5,7 @@ using LamprosInsights.Application.Features.Analytics.Validation;
 using LamprosInsights.Infrastructure.AI.OpenAI;
 using LamprosInsights.Infrastructure.Persistence;
 using LamprosInsights.Infrastructure.Persistence.Schema;
+using LamprosInsights.Infrastructure.Persistence.SqlExecution;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,6 +31,10 @@ builder.Services.AddScoped<
 builder.Services.AddScoped<
     ISqlValidator,
     SqlValidator>();
+
+builder.Services.AddScoped<
+    ISqlExecutor,
+    SqlServerSqlExecutor>();
 
 builder.Services.AddScoped<AnalyticsPromptBuilder>();
 

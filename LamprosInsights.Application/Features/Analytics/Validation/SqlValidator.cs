@@ -20,7 +20,6 @@ namespace LamprosInsights.Application.Features.Analytics.Validation
         {
             MustStartWithSelect,
             MustNotContainForbiddenKeywords,
-            MustNotContainMultipleStatements,
             MustNotContainComments
         };
         }
@@ -70,12 +69,12 @@ namespace LamprosInsights.Application.Features.Analytics.Validation
             return null;
         }
 
-        private string? MustNotContainMultipleStatements(string sql)
-        {
-            return sql.Contains(";")
-                ? "Multiple SQL statements are not allowed"
-                : null;
-        }
+        //private string? MustNotContainMultipleStatements(string sql)
+        //{
+        //    return sql.Contains(";")
+        //        ? "Multiple SQL statements are not allowed"
+        //        : null;
+        //}
 
         private string? MustNotContainComments(string sql)
         {
