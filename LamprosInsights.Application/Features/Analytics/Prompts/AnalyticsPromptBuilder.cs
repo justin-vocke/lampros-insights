@@ -15,7 +15,7 @@ public class AnalyticsPromptBuilder
             - ONLY generate SQL
             - DO NOT include markdown
             - DO NOT include explanations
-            - ONLY generate SELECT statements
+            - ONLY generate SELECT statements, but don't allow SELECT * statements
             - NEVER generate UPDATE, DELETE, DROP, INSERT, or ALTER
             - Use TOP 100 unless explicitly requested otherwise
             - Use only tables and columns provided in the schema

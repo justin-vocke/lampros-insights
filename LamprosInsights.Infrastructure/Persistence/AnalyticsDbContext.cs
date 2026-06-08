@@ -29,6 +29,7 @@ namespace LamprosInsights.Infrastructure.Persistence
         public DbSet<Invoice> Invoices => Set<Invoice>();
 
         public DbSet<Payment> Payments => Set<Payment>();
+        public DbSet<AnalyticsQueries> AnalyticsQueries => Set<AnalyticsQueries>();
 
         protected override void OnModelCreating(
             ModelBuilder modelBuilder)
