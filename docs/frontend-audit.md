@@ -6,7 +6,7 @@ Scope: `web/` (React 19 + Vite + TypeScript)
 
 ## Summary
 
-The frontend is a single page with two components. It is not wired to the API: results come from a hardcoded array. `npm run build` currently fails on one type error. `npm run lint` passes.
+The frontend is a single page with two components. It is not wired to the API: results come from a hardcoded array. `npm run build` and `npm run lint` both pass (the one build error found during the audit has been fixed).
 
 ## Pages and routing
 
@@ -42,7 +42,7 @@ The frontend is a single page with two components. It is not wired to the API: r
 
 ## Gaps blocking API integration
 
-1. **Build error.** `src/components/QuestionInput.tsx:1` imports `FormEvent` as a value while `verbatimModuleSyntax` is enabled (TS1484). Fix: `import type { FormEvent } from "react";`. The dev server still runs because Vite does not type-check.
+1. **Build error (fixed).** `src/components/QuestionInput.tsx` imported `FormEvent` as a value while `verbatimModuleSyntax` is enabled (TS1484). It is now `import type { FormEvent } from "react";`. The dev server ran anyway because Vite does not type-check.
 2. **No `src/api/` folder.** CLAUDE.md requires API calls to live there. There is no client for `POST /api/analytics/generate-sql` and no TypeScript types for the response:
    - `sql: string`
    - `isValid: boolean`
@@ -130,4 +130,4 @@ To avoid duplicating LAM-27 ("Standardize frontend API and error handling"), the
 
 ## Out of scope for this audit
 
-No code was changed. Fixes are expected to land in follow-up subtasks under LAM-118.
+Apart from the one-line build fix above, no code was changed. Other fixes are expected to land in follow-up subtasks under LAM-118.
