@@ -40,7 +40,11 @@ npm run build    # tsc -b && vite build
 npm run lint     # eslint
 ```
 
-There are no test projects yet.
+Tests (from repo root):
+```
+dotnet test LamprosInsights.sln
+```
+Backend unit tests live in `tests/LamprosInsights.Application.Tests` (xUnit, hand-written fakes in `Fakes/`, no mocking library). Skipped tests document known validator limitations to be fixed by parser-based validation. There are no frontend or integration tests yet.
 
 ## Configuration
 
