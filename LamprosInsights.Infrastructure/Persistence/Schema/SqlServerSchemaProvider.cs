@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System.Text;
 using LamprosInsights.Application.Features.Analytics.Abstractions;
+using LamprosInsights.Application.Features.Analytics.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 
@@ -17,6 +18,11 @@ public class SqlServerSchemaProvider : ISchemaProvider
             configuration.GetConnectionString("DefaultConnection")
             ?? throw new InvalidOperationException(
                 "Database connection string not found.");
+    }
+
+    public Task<DatabaseSchema> GetSchemaAsync(CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
     }
 
     public async Task<string> GetSchemaContextAsync(

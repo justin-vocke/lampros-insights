@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LamprosInsights.Application.Features.Analytics.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,8 @@ namespace LamprosInsights.Application.Features.Analytics.Abstractions
     {
         Task<string> GetSchemaContextAsync(
         CancellationToken cancellationToken = default);
+
+        Task<DatabaseSchema> GetSchemaAsync(
+            CancellationToken cancellationToken = default);
     }
 }
