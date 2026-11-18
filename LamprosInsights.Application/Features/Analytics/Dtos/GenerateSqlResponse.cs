@@ -13,7 +13,6 @@ namespace LamprosInsights.Application.Features.Analytics.Dtos
         public bool IsValid { get; set; }
 
         public List<string> ValidationErrors { get; set; } = [];
-        public string? ErrorMessage { get; set; }
 
         public AnalyticsQueryResult? Result { get; set; }
     }

@@ -22,6 +22,9 @@ public class AnalyticsController(
     //}
 
     [HttpPost("generate-sql")]
+    [ProducesResponseType(typeof(GenerateSqlResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<GenerateSqlResponse>> GenerateSql(
     GenerateSqlRequest request,
     CancellationToken cancellationToken)

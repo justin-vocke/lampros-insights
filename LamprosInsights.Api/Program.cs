@@ -1,3 +1,4 @@
+using LamprosInsights.Api.ErrorHandling;
 using LamprosInsights.Application.Features.Analytics.Abstractions;
 using LamprosInsights.Application.Features.Analytics.Prompts;
 using LamprosInsights.Application.Features.Analytics.Services;
@@ -11,6 +12,9 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddProblemDetails();
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -48,6 +52,9 @@ builder.Services.AddScoped<
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.UseExceptionHandler();
+app.UseStatusCodePages();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -61,3 +68,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+// Exposed for WebApplicationFactory in integration tests.
+public partial class Program { }

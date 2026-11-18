@@ -2,7 +2,6 @@ using LamprosInsights.Application.Features.Analytics.Dtos;
 using LamprosInsights.Application.Features.Analytics.Prompts;
 using LamprosInsights.Application.Features.Analytics.Services;
 using LamprosInsights.Application.Tests.Fakes;
-using Microsoft.Extensions.Logging.Abstractions;
 
 namespace LamprosInsights.Application.Tests.Features.Analytics;
 
@@ -18,7 +17,6 @@ public class AnalyticsServiceTests
         _aiProvider,
         new AnalyticsPromptBuilder(),
         _validator,
-        NullLogger<AnalyticsService>.Instance,
         _executor);
 
     [Fact]
