@@ -39,6 +39,7 @@ npm run dev      # Vite dev server
 npm run build    # tsc -b && vite build
 npm run lint     # eslint
 ```
+The dev server proxies `/api` to the API at `https://localhost:7030` (run the API with the `https` profile), or to `API_PROXY_TARGET` if set. See `web/.env.example`.
 
 Tests (from repo root):
 ```
