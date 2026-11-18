@@ -3,15 +3,24 @@ import type { FormEvent } from "react";
 
 type QuestionInputProps = {
   onSubmit: (question: string) => void;
+  isSubmitting: boolean;
+  onCancel: () => void;
 };
 
-export default function QuestionInput({ onSubmit }: QuestionInputProps) {
+export default function QuestionInput({ onSubmit, isSubmitting, onCancel }: QuestionInputProps) {
   const [question, setQuestion] = useState("");
 
-  const isSubmitDisabled = useMemo(() => question.trim().length === 0, [question]);
+  const isSubmitDisabled = useMemo(
+    () => isSubmitting || question.trim().length === 0,
+    [isSubmitting, question],
+  );
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (isSubmitting) {
+      return;
+    }
 
     const trimmedQuestion = question.trim();
     if (!trimmedQuestion) {
@@ -24,6 +33,7 @@ export default function QuestionInput({ onSubmit }: QuestionInputProps) {
   return (
     <form
       onSubmit={handleSubmit}
+      aria-busy={isSubmitting}
       style={{
         display: "flex",
         flexDirection: "column",
@@ -34,6 +44,7 @@ export default function QuestionInput({ onSubmit }: QuestionInputProps) {
       <textarea
         rows={4}
         value={question}
+        readOnly={isSubmitting}
         onChange={(event) => setQuestion(event.target.value)}
         placeholder="Ask a question about your data..."
         style={{
@@ -49,22 +60,41 @@ export default function QuestionInput({ onSubmit }: QuestionInputProps) {
         }}
       />
 
-      <button
-        type="submit"
-        disabled={isSubmitDisabled}
-        style={{
-          alignSelf: "flex-start",
-          padding: "0.5rem 1rem",
-          borderRadius: "6px",
-          border: "1px solid #111827",
-          backgroundColor: isSubmitDisabled ? "#d1d5db" : "#111827",
-          color: "#ffffff",
-          cursor: isSubmitDisabled ? "not-allowed" : "pointer",
-          font: "inherit",
-        }}
-      >
-        Run Query
-      </button>
+      <div style={{ display: "flex", gap: "0.5rem", alignSelf: "flex-start" }}>
+        <button
+          type="submit"
+          disabled={isSubmitDisabled}
+          style={{
+            padding: "0.5rem 1rem",
+            borderRadius: "6px",
+            border: "1px solid #111827",
+            backgroundColor: isSubmitDisabled ? "#d1d5db" : "#111827",
+            color: "#ffffff",
+            cursor: isSubmitDisabled ? "not-allowed" : "pointer",
+            font: "inherit",
+          }}
+        >
+          Run Query
+        </button>
+
+        {isSubmitting ? (
+          <button
+            type="button"
+            onClick={onCancel}
+            style={{
+              padding: "0.5rem 1rem",
+              borderRadius: "6px",
+              border: "1px solid #111827",
+              backgroundColor: "#ffffff",
+              color: "#111827",
+              cursor: "pointer",
+              font: "inherit",
+            }}
+          >
+            Cancel
+          </button>
+        ) : null}
+      </div>
     </form>
   );
 }
