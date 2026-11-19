@@ -1,20 +1,15 @@
 import { useState } from "react";
 import QuestionInput from "./components/QuestionInput";
-import ResultsTable from "./components/ResultsTable";
-
-type TableRow = Record<string, unknown>;
-
-const sampleResults: TableRow[] = [
-  { month: "January", totalRevenue: 18400, orders: 123, region: "North" },
-  { month: "February", totalRevenue: 20150, orders: 139, region: "North" },
-  { month: "March", totalRevenue: 19320, orders: 131, region: "North" },
-];
+import QueryOutcome from "./components/QueryOutcome";
+import { useGenerateSql } from "./hooks/useGenerateSql";
 
 function App() {
-  const [lastQuestion, setLastQuestion] = useState("");
+  const { state, generate, cancel } = useGenerateSql();
+  const [submittedQuestion, setSubmittedQuestion] = useState("");
 
   const handleSubmit = (question: string) => {
-    setLastQuestion(question);
+    setSubmittedQuestion(question);
+    void generate(question);
   };
 
   return (
@@ -29,15 +24,12 @@ function App() {
       }}
     >
       <h1 style={{ margin: 0 }}>Analytics UI Preview</h1>
-      <QuestionInput onSubmit={handleSubmit} />
-
-      {lastQuestion ? (
-        <p style={{ margin: 0 }}>
-          Last question: <strong>{lastQuestion}</strong>
-        </p>
-      ) : null}
-
-      <ResultsTable data={sampleResults} />
+      <QuestionInput
+        onSubmit={handleSubmit}
+        isSubmitting={state.status === "loading"}
+        onCancel={cancel}
+      />
+      <QueryOutcome state={state} question={submittedQuestion} />
     </main>
   );
 }
