@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,5 +15,7 @@ namespace LamprosInsights.Application.Features.Analytics.Dtos
         public int RowCount { get; set; }
 
         public long ExecutionTimeMs { get; set; }
+
+        public bool IsTruncated { get; set; }
     }
 }

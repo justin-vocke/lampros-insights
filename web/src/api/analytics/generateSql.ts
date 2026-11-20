@@ -29,7 +29,8 @@ function isQueryResult(value: unknown): value is AnalyticsQueryResult {
     ) &&
     Array.isArray(value.rows) &&
     typeof value.rowCount === 'number' &&
-    typeof value.executionTimeMs === 'number'
+    typeof value.executionTimeMs === 'number' &&
+    typeof value.isTruncated === 'boolean'
   )
 }
 

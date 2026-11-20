@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using LamprosInsights.Application.Features.Analytics.Exceptions;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,6 +34,34 @@ public sealed class GlobalExceptionHandler(
         }
 
         var traceId = Activity.Current?.Id ?? httpContext.TraceIdentifier;
+
+        if (exception is QueryTimeoutException timeout)
+        {
+            logger.LogWarning(
+                "Query execution timed out. TimeoutSeconds: {TimeoutSeconds}, Method: {HttpMethod}, Path: {RequestPath}, TraceId: {TraceId}",
+                timeout.TimeoutSeconds,
+                httpContext.Request.Method,
+                httpContext.Request.Path.Value,
+                traceId);
+
+            httpContext.Response.StatusCode = StatusCodes.Status504GatewayTimeout;
+
+            var timeoutProblem = new ProblemDetails
+            {
+                Status = StatusCodes.Status504GatewayTimeout,
+                Title = "The query took too long to run.",
+                Detail = $"It was stopped after {timeout.TimeoutSeconds} seconds. Try a more specific question."
+            };
+            timeoutProblem.Extensions["traceId"] = traceId;
+
+            await problemDetailsService.TryWriteAsync(new ProblemDetailsContext
+            {
+                HttpContext = httpContext,
+                ProblemDetails = timeoutProblem
+            });
+
+            return true;
+        }
 
         logger.LogError(
             exception,

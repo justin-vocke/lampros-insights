@@ -19,7 +19,7 @@ export default function QueryOutcome({ state, question }: QueryOutcomeProps) {
       );
 
     case "success": {
-      const { rows, rowCount, executionTimeMs } = state.data.result;
+      const { rows, rowCount, executionTimeMs, isTruncated } = state.data.result;
       return (
         <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
           {question ? (
@@ -30,6 +30,12 @@ export default function QueryOutcome({ state, question }: QueryOutcomeProps) {
           <p style={{ margin: 0 }}>
             {rowCount} {rowCount === 1 ? "row" : "rows"} · {executionTimeMs} ms
           </p>
+          {isTruncated ? (
+            <p style={{ margin: 0 }}>
+              Showing the first {rowCount} rows. The query returned more; refine
+              your question to narrow the results.
+            </p>
+          ) : null}
           <ResultsTable data={rows} />
         </div>
       );

@@ -28,6 +28,11 @@ builder.Services.AddDbContext<AnalyticsDbContext>(
             builder.Configuration.GetConnectionString(
                 "DefaultConnection"));
     });
+builder.Services.AddOptions<QueryExecutionOptions>()
+    .Bind(builder.Configuration.GetSection(QueryExecutionOptions.SectionName))
+    .Validate(o => o.MaxRows > 0 && o.CommandTimeoutSeconds > 0, "QueryExecution:MaxRows and QueryExecution:CommandTimeoutSeconds must be greater than 0.")
+    .ValidateOnStart();
+
 builder.Services.AddScoped<
     ISchemaProvider,
     SqlServerSchemaProvider>();
