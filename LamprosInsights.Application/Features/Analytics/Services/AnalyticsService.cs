@@ -1,4 +1,4 @@
-﻿using LamprosInsights.Application.Features.Analytics.Abstractions;
+using LamprosInsights.Application.Features.Analytics.Abstractions;
 using LamprosInsights.Application.Features.Analytics.Dtos;
 using LamprosInsights.Application.Features.Analytics.Prompts;
 using LamprosInsights.Application.Features.Analytics.Validation;
@@ -62,7 +62,7 @@ namespace LamprosInsights.Application.Features.Analytics.Services
                     ValidationErrors = validation.Errors
                 };
             }
-            var result = await _sqlExecutor.ExecuteAsync(sql);
+            var result = await _sqlExecutor.ExecuteAsync(sql, cancellationToken);
             return new GenerateSqlResponse
             {
                 Sql = sql,

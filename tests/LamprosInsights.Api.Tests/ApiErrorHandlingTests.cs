@@ -3,6 +3,7 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using LamprosInsights.Application.Features.Analytics.Dtos;
+using LamprosInsights.Application.Features.Analytics.Exceptions;
 
 namespace LamprosInsights.Api.Tests;
 
@@ -45,6 +46,29 @@ public class ApiErrorHandlingTests : IClassFixture<ApiFactory>
         Assert.DoesNotContain("Password", raw, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("prod-sql", raw, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain(nameof(InvalidOperationException), raw);
+        Assert.DoesNotContain(" at ", raw);
+    }
+
+    [Fact]
+    public async Task QueryTimeout_Returns504ProblemDetails_WithoutLeakingDetails()
+    {
+        _factory.Analytics.ExceptionToThrow =
+            new QueryTimeoutException(30, new Exception("Server=prod-sql;Password=secret"));
+
+        var response = await _client.PostAsync(GenerateSqlUrl, Json("""{"question":"q"}"""));
+        var raw = await response.Content.ReadAsStringAsync();
+
+        Assert.Equal(HttpStatusCode.GatewayTimeout, response.StatusCode);
+        Assert.Equal(ProblemJson, response.Content.Headers.ContentType?.MediaType);
+
+        using var doc = JsonDocument.Parse(raw);
+        Assert.Equal("The query took too long to run.", doc.RootElement.GetProperty("title").GetString());
+        Assert.False(string.IsNullOrWhiteSpace(doc.RootElement.GetProperty("traceId").GetString()));
+
+        Assert.DoesNotContain("secret", raw, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("Password", raw, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("prod-sql", raw, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain(nameof(QueryTimeoutException), raw);
         Assert.DoesNotContain(" at ", raw);
     }
 

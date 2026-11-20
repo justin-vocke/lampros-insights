@@ -1,80 +1,87 @@
-﻿using LamprosInsights.Application.Features.Analytics.Abstractions;
+﻿using System.Diagnostics;
+using LamprosInsights.Application.Features.Analytics.Abstractions;
 using LamprosInsights.Application.Features.Analytics.Dtos;
+using LamprosInsights.Application.Features.Analytics.Exceptions;
 using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
 
 namespace LamprosInsights.Infrastructure.Persistence.SqlExecution
 {
     public class SqlServerSqlExecutor : ISqlExecutor
     {
-        private readonly string _connectionString;
+        private const int SqlTimeoutErrorNumber = -2;
 
-        public SqlServerSqlExecutor(IConfiguration configuration)
+        private readonly string _connectionString;
+        private readonly QueryExecutionOptions _options;
+
+        public SqlServerSqlExecutor(
+            IConfiguration configuration,
+            IOptions<QueryExecutionOptions> options)
         {
             _connectionString =
                 configuration.GetConnectionString("DefaultConnection")
                 ?? throw new InvalidOperationException(
                     "Connection string not configured.");
+            _options = options.Value;
         }
+
         public async Task<AnalyticsQueryResult> ExecuteAsync(string sql, CancellationToken cancellationToken = default)
         {
-            var columnNames = new List<string>();
-            var columns = new List<ColumnDefinition>();
-            var result = new AnalyticsQueryResult();
-
             var stopwatch = Stopwatch.StartNew();
 
-            using var connection = new SqlConnection(_connectionString);
+            // Only timeouts after the connection is open are query timeouts; connect timeouts are infrastructure failures.
+            var connectionOpened = false;
 
-            await connection.OpenAsync(cancellationToken);
-
-            using var command =
-                new SqlCommand(sql, connection);
-
-            using var reader =
-                await command.ExecuteReaderAsync(cancellationToken);
-
-            for (int i = 0; i < reader.FieldCount; i++)
+            try
             {
-                var columnName = reader.GetName(i);
-                columnNames.Add(columnName);
+                await using var connection = new SqlConnection(_connectionString);
+                await connection.OpenAsync(cancellationToken);
+                connectionOpened = true;
 
-                columns.Add(new ColumnDefinition 
-                { 
-                    Name = columnName,
-                    Type = reader.GetFieldType(i).Name
-                });
-            }
-            result.Columns = columns;
-
-            while(await reader.ReadAsync(cancellationToken))
-            {
-                var row = new Dictionary<string, object?>();
-
-                for(int i = 0; i < columnNames.Count; i++)
+                await using var command = new SqlCommand(sql, connection)
                 {
-                    var value = reader.GetValue(i);
+                    CommandTimeout = _options.CommandTimeoutSeconds
+                };
 
-                    row[columnNames[i]] = 
-                        value == DBNull.Value
-                        ? null
-                        : value;
+                var reader = await command.ExecuteReaderAsync(cancellationToken);
+                (List<ColumnDefinition> Columns, List<Dictionary<string, object?>> Rows, bool IsTruncated) read;
+
+                try
+                {
+                    read = await QueryResultReader.ReadAsync(reader, _options.MaxRows, cancellationToken);
+
+                    // Stop the server streaming the remaining rows; disposing a
+                    // SqlDataReader would otherwise drain all of them.
+                    if (read.IsTruncated)
+                    {
+                        command.Cancel();
+                    }
                 }
-                result.Rows.Add(row);
-            }
-            stopwatch.Stop();
-            result.ExecutionTimeMs = stopwatch.ElapsedMilliseconds;
-            result.RowCount = result.Rows.Count;
+                finally
+                {
+                    await reader.DisposeAsync();
+                }
 
-            return result;
-            
+                stopwatch.Stop();
+
+                return new AnalyticsQueryResult
+                {
+                    Columns = read.Columns,
+                    Rows = read.Rows,
+                    RowCount = read.Rows.Count,
+                    IsTruncated = read.IsTruncated,
+                    ExecutionTimeMs = stopwatch.ElapsedMilliseconds
+                };
+            }
+            catch (SqlException ex) when (cancellationToken.IsCancellationRequested)
+            {
+                throw new OperationCanceledException("The query was cancelled.", ex, cancellationToken);
+            }
+            catch (SqlException ex) when (connectionOpened && ex.Number == SqlTimeoutErrorNumber)
+            {
+                throw new QueryTimeoutException(_options.CommandTimeoutSeconds, ex);
+            }
         }
     }
 }

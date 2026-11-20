@@ -15,6 +15,7 @@ Accepted
 - All API errors use RFC 9457 / 7807 ProblemDetails (`application/problem+json`) in every environment, via `AddProblemDetails`, an `IExceptionHandler` (`GlobalExceptionHandler`), and `UseStatusCodePages`.
 - Unhandled exceptions become a generic `500` with a fixed title and detail, plus a `traceId` for log correlation. Exception details appear only in server logs (logged once, without the question, prompts, SQL, or query string values).
 - A request aborted by the client is logged at Information and answered with `499` and no body.
+- A query timeout (`QueryTimeoutException`) maps to `504` ProblemDetails with a fixed title ("The query took too long to run."), a fixed detail naming the timeout in seconds, and a `traceId`. Logged at Warning without the SQL. (Amendment, LAM-71.)
 - SQL validation failure is a domain outcome (`200`, `isValid: false`), not an error.
 - `GenerateSqlResponse.ErrorMessage` is removed so there is a single error channel.
 
@@ -23,7 +24,7 @@ Accepted
 - **Bare `{ "message": "..." }`**: non-standard, no correlation id, no extensibility.
 - **`success` / `data` / `error` envelope**: often returns `200` for errors, which breaks HTTP semantics and tooling.
 - **Vendor formats** (Azure / Google `{ "error": { "code", "message" } }`): non-standard for ASP.NET, and ProblemDetails is built in.
-- **Exception-type mapping to 502 / 504 now**: deferred; nothing in the UI needs it yet.
+- **Exception-type mapping to 502 / 504 now**: initially deferred; the query timeout `504` was added with LAM-71.
 - **Showing exception details in Development**: rejected; the frontend would get HTML or an inconsistent shape in dev.
 
 ## Consequences
@@ -33,4 +34,4 @@ Accepted
 
 ## Revisit when
 
-The UX needs to distinguish failure causes (for example LAM-71 query timeout mapped to `504`). Then introduce Application-level exception types mapped in the handler, and a stable machine-readable `code` / `type`, so clients never branch on message text.
+The UX needs to distinguish more failure causes than the query timeout. Then introduce a stable machine-readable `code` / `type`, so clients never branch on message text.

@@ -1,3 +1,4 @@
+using LamprosInsights.Application.Features.Analytics.Exceptions;
 using LamprosInsights.Application.Features.Analytics.Dtos;
 using LamprosInsights.Application.Features.Analytics.Prompts;
 using LamprosInsights.Application.Features.Analytics.Services;
@@ -70,7 +71,7 @@ public class AnalyticsServiceTests
     }
 
     [Fact]
-    public async Task GenerateSqlAsync_PassesCancellationTokenToSchemaAndAIProviders()
+    public async Task GenerateSqlAsync_PassesCancellationTokenToSchemaAIProviderAndExecutor()
     {
         using var cts = new CancellationTokenSource();
 
@@ -78,6 +79,7 @@ public class AnalyticsServiceTests
 
         Assert.Equal(cts.Token, _schemaProvider.ReceivedToken);
         Assert.Equal(cts.Token, _aiProvider.ReceivedToken);
+        Assert.Equal(cts.Token, _executor.ReceivedToken);
     }
 
     [Fact]
@@ -90,6 +92,18 @@ public class AnalyticsServiceTests
 
         Assert.Equal("provider down", ex.Message);
         Assert.Empty(_executor.ExecutedSql);
+    }
+
+    [Fact]
+    public async Task GenerateSqlAsync_ExecutorTimesOut_PropagatesQueryTimeoutException()
+    {
+        var timeout = new QueryTimeoutException(30);
+        _executor.ExceptionToThrow = timeout;
+
+        var ex = await Assert.ThrowsAsync<QueryTimeoutException>(
+            () => CreateService().GenerateSqlAsync("Any question"));
+
+        Assert.Same(timeout, ex);
     }
 
     [Fact]

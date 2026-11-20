@@ -14,6 +14,7 @@ export type AnalyticsQueryResult = {
   rows: Record<string, unknown>[]
   rowCount: number
   executionTimeMs: number
+  isTruncated: boolean
 }
 
 /** Raw wire shape of POST /analytics/generate-sql (200). */

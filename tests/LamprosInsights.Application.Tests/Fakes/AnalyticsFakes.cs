@@ -61,10 +61,12 @@ internal sealed class FakeSqlExecutor : ISqlExecutor
     public AnalyticsQueryResult ResultToReturn { get; set; } = new();
     public Exception? ExceptionToThrow { get; set; }
     public List<string> ExecutedSql { get; } = [];
+    public CancellationToken? ReceivedToken { get; private set; }
 
     public Task<AnalyticsQueryResult> ExecuteAsync(string sql, CancellationToken cancellationToken = default)
     {
         ExecutedSql.Add(sql);
+        ReceivedToken = cancellationToken;
 
         if (ExceptionToThrow is not null)
             throw ExceptionToThrow;
